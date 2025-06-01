@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Russian Roulette</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      .container {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .options{
+        margin-top: 20px;
+        display: flex;
+        gap: 30px;
+      }
+
+      .options button {
+        padding: 20px;
+        font-size: 20px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="gameTitle">
+        <h1>Russian Roulette</h1>
+      </div>
+
+      <div class="poster">
+        <img src="videos/lol.jpg" alt="" width="1000px" height="500px" />
+      </div>
+
+      <h2>Bet on</h2>
+
+      <div class="options">
+        <button onclick="person()">Person</button>
+        <button onclick="turn()">Turn</button>
+        <button onclick="personTurn()">Both</button>
+      </div>
+
+    </div>
+  </body>
+  <script src="home.js"></script>
+</html>

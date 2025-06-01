@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Russian Roulette</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="info">
+        <h2>Balance <p id="balance">100</p></h2>
+    </div>
+
+    <div class="container">
+        <h1>Bet on person</h1>
+
+        <video src="videos/load.mp4" height="400px" width="600px"></video>
+
+        <h1 id="result"></h1>
+
+        <label for="amount">Enter Amount: </label>
+        <input type="text" name="amount" id="amount">
+
+        <h3>Person</h3>
+        <div>
+            <label for="person1">Person 1</label>
+            <input type="radio" name="person" id="person" value="1">
+
+            <label for="person2">Person 2</label>
+            <input type="radio" name="person" id="person" value="2">
+        </div>
+
+        <button id="bet" style="padding: 10px;">Bet</button>
+    </div>
+
+</body>
+<script src="person.js"></script>
+</html>
