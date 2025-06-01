@@ -1,11 +1,11 @@
 function person(){
-    window.location.href = "/person.html"
+    window.location.href = "person.html"
 }
 
 function turn(){
-    window.location.href = "/turn.html"
+    window.location.href = "turn.html"
 }
 
 function personTurn(){
-    window.location.href = "/personTurn.html"
+    window.location.href = "personTurn.html"
 }
