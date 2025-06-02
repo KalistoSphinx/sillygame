@@ -10,9 +10,6 @@ const bet = document.getElementById("bet");
 let elem = document.getElementsByTagName("video");
 let balanceText = document.getElementById("balance")
 
-console.log(balanceText);
-
-
 if (localStorage.getItem("balance") !== null) {
     balance = parseInt(localStorage.getItem("balance"));
 } else {
@@ -34,14 +31,19 @@ function waitForVideoToEnd(video) {
     });
 }
 
+let turn = Math.floor(Math.random() * 2)
+
 bet.addEventListener("click", () => {
     const userChoice = document.querySelector("input[name='person']:checked").value;
     
     let amount = document.getElementById("amount").value;
     amount = parseInt(amount);
-
-    console.log(balance);
+    console.log(amount);
     
+    if(isNaN(amount)){
+        alert("Please enter an amount")
+        return
+    }
 
     if(amount > balance){
         alert("insuffecient balance")
@@ -61,7 +63,7 @@ bet.addEventListener("click", () => {
         for (let i = 1; i <= 6; i++) {
             console.log("Round:", i);
 
-            if (i % 2 !== 0) {
+            if (turn == 0) {
                 if (i === bullet) {
                     elem[0].src = "videos/Kill1.mp4";
                     setTimeout(() => {
@@ -77,7 +79,9 @@ bet.addEventListener("click", () => {
                     }, 2000);
                     await waitForVideoToEnd(elem[0]);
                 }
-            } else {
+            } 
+            
+            if(turn == 1){
                 if (i === bullet) {
                     elem[0].src = "videos/Kill2.mp4";
                     setTimeout(() => {
@@ -94,6 +98,12 @@ bet.addEventListener("click", () => {
                     }, 2000);
                     await waitForVideoToEnd(elem[0]);
                 }
+            }
+
+            if(turn == 0){
+                turn = 1
+            } else {
+                turn = 0
             }
 
             await delay(5000);
